@@ -18,10 +18,10 @@ func init() {
 		abPath = path.Dir(filename)
 	}
 	filePath := path.Join(path.Dir(abPath), "conf", "config.yaml")
-	utils.ConfigPath = flag.String("config", filePath, "-c")
+	utils.ConfigPath = flag.String("config", filePath, "the path of config file")
 }
 
-func OnConnectionAdd(conn ziface.IConnection)  {
+func OnConnectionAdd(conn ziface.IConnection) {
 	player := core.NewPlayer(conn)
 	// 同步玩家的ID给客户端
 	player.SyncPid()
@@ -47,7 +47,7 @@ func OnConnectionRemove(conn ziface.IConnection) {
 	player.SyncOffLine()
 }
 
-func main()  {
+func main() {
 	flag.Parse()
 	utils.InitConfig()
 	wp := znet.NewWorkPool(
