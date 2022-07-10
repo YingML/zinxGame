@@ -15,16 +15,16 @@ func InitConfig() {
 }
 
 type config struct {
-	Name             string `yaml:"name"`
-	IP               string `yaml:"ip"`
-	Port             int    `yaml:"port"`
-	MaxConnection    uint32    `yaml:"MaxConnection"`
-	MaxPackageSize   uint32 `yaml:"maxPackageSize"`
-	MaxWorkPoolSize  uint32 `yaml:"maxWorkPoolSize"`
-	MaxTaskQueueSize uint32 `yaml:"maxTaskQueueSize"`
+	Name             string `yaml:"Name"`
+	IP               string `yaml:"IP"`
+	Port             int    `yaml:"Port"`
+	MaxConnection    uint32 `yaml:"MaxConnection"`
+	MaxPackageSize   uint32 `yaml:"MaxPackageSize"`
+	MaxWorkPoolSize  uint32 `yaml:"MaxWorkPoolSize"`
+	MaxTaskQueueSize uint32 `yaml:"MaxTaskQueueSize"`
 }
 
-func (c *config) Reload()  {
+func (c *config) Reload() {
 	fmt.Printf("==> ConfigPath is [%s]\n", *ConfigPath)
 	data, err := ioutil.ReadFile(*ConfigPath)
 	if err != nil {
