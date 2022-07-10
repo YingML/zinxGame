@@ -1,0 +1,11 @@
+# Server端配置
+Name: "Zinx v1.0"
+IP: "0.0.0.0"
+Port: 8999
+
+
+# Zinx配置
+MaxConnection: 1024
+MaxPackageSize: 4096
+MaxWorkPoolSize: 50
+MaxTaskQueueSize: 1024
